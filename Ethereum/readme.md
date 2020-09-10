@@ -19,6 +19,7 @@ In this example you will find:
 + [Solc](#solc)
 + [Geth](#geth)
 + [Web3](#web3)
++ [truffle](#truffle)
 
 
 ## Installation
@@ -26,6 +27,7 @@ In this example you will find:
 ```bash
 sudo pacman -S go-ethereum solc
 npm i web3 solc --save
+sudo npm i -g truffle 
 ```
 
 ## Solc
@@ -55,4 +57,14 @@ voter.addOption("mlibre" , {from: "0xD8f24D419153E5D03d614C5155f900f4B5C8A65C"})
 ## Web3
 ```bash
 node deploy_contract.js -f voter.sol -c Voter -s "0xD8f24D419153E5D03d614C5155f900f4B5C8A65C" -p "password" -h "http://127.0.0.1:8545"
+```
+
+## Truffle
+```bash
+truffle init
+truffle compile
+truffle develop
+truffle test
+truffle unbox metacoin
+truffle migrate
 ```

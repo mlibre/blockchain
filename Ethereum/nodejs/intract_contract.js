@@ -25,7 +25,7 @@ const options = commandLineArgs(optionDefinitions);
 })();
 
 function contract(filename, contractAddress, web3) {
-	let abiFIle = fs.readFileSync(`./contracts/bin/${filename}` , 'utf8')
+	let abiFIle = fs.readFileSync(`../contracts/bin/${filename}` , 'utf8')
 	let abi = JSON.parse(abiFIle);
 	return new web3.eth.Contract(abi , contractAddress);
 }

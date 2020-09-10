@@ -1,0 +1,15 @@
+{
+  "name": "ethereum",
+  "version": "1.0.0",
+  "description": "Introducing Ethereum === Ethereum is a decentralized platform.   This repository contains a voter and a multi-sig-wallet contrat.  > Development tools: `nodejs 12` & `web3 1.2` and `solc 0.7.1`",
+  "main": "deploy_contract.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "solc": "^0.7.1",
+    "web3": "^1.2.11"
+  }
+}
