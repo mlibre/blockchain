@@ -109,7 +109,7 @@ function compile(filename) {
 ```
 So in the first line, we read the contract file.  
 In the second line, we specify compiler options. Like optimizer, Language, and ...  
-these options are working with `solc 0.7`.  
+these options work with `solc 0.7`.  
 Now we compile the `.sol` file using `solc.compile` function.  
 For each contract in the `.sol` file, `solc` creates a key in `compiledContract.contracts['voter.sol']`.  
 As we only have one contract, so we just pick the first one.  
@@ -189,7 +189,7 @@ You can find your contract address in the output log. (in this case `0xE683007C5
 
 > The Matic mainnet address is: `https://rpc-mainnet.matic.network`.
 
-To deploy your contract or interacting with the node you just need to replace the testnet address with the above.  
+To deploy your contract or interacting with the mainnet you just need to replace the testnet address with the above.  
 
 ## MATIC
 MATIC is the Matic Network native token.  
@@ -227,7 +227,6 @@ eth.getCode("0xE683007C5BfB5BEBA5481C3e938dD4DC47cddbFC")
 # To load a contract using geth just need to put the abi we created, and the address
 var voter = eth.contract([{"inputs":[{"internalType":"string","name":"option","type":"string"}],"name":"addOption","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"getOptions","outputs":[{"internalType":"string[]","name":"","type":"string[]"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getVotes","outputs":[{"internalType":"uint256[]","name":"","type":"uint256[]"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"options","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"remove","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"startVoting","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"option","type":"uint256"}],"name":"vote","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"string","name":"optionName","type":"string"}],"name":"vote","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"votes","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"}]).at("0xE683007C5BfB5BEBA5481C3e938dD4DC47cddbFC");
 voter
-# Now lets check our account
 voter.addOption("mlibre" , {from: "0xD8f24D419153E5D03d614C5155f900f4B5C8A65C"})
 # Your account should have been added
 ```
