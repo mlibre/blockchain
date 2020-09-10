@@ -1,4 +1,4 @@
-Introduing Matic Network
+Introducing Matic Network
 ===
 **[Matic](https://matic.network/)** is a decentralized platform using the [Plasma framework](https://academy.binance.com/blockchain/what-is-ethereum-plasma) that provides faster and low-cost transactions.
 Matic is trying to improve some current blockchain challenges.
@@ -184,7 +184,7 @@ Contract Address: 0xE683007C5BfB5BEBA5481C3e938dD4DC47cddbFC
 Confirmation Number: 1
 ```
 
-Congratulation. you just made your first contract in Matic Network.  
+Congratulations. you just made your first contract in Matic Network.  
 You can find your contract address in the output log. (in this case `0xE683007C5BfB5BEBA5481C3e938dD4DC47cddbFC`)
 
 > The Matic mainnet address is: `https://rpc-mainnet.matic.network`.
