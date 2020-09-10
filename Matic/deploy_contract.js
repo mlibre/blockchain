@@ -91,10 +91,10 @@ async function deploy(web3, contract, sender , pk) {
 		gas: gasEstimate
 	})
 	.on('transactionHash' , function (transationHash) {
-		console.log(`Transation hash: ${transationHash}`);
+		console.log(`Transaction hash: ${transationHash}`);
 	})
 	.on('confirmation' , function (confirmationNumber , receipt) {
-		console.log(`Confimation Number: ${confirmationNumber}`);
+		console.log(`Confirmation Number: ${confirmationNumber}`);
 	})
 	.on('error' , function (error) {
 		console.log(error);

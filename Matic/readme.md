@@ -151,10 +151,10 @@ async function deploy(web3, contract, sender , pk) {
 		gas: gasEstimate
 	})
 	.on('transactionHash' , function (transationHash) {
-		console.log(`Transation hash: ${transationHash}`);
+		console.log(`Transaction hash: ${transationHash}`);
 	})
 	.on('confirmation' , function (confirmationNumber , receipt) {
-		console.log(`Confimation Number: ${confirmationNumber}`);
+		console.log(`Confirmation Number: ${confirmationNumber}`);
 	})
 	.on('error' , function (error) {
 		console.log(error);
@@ -178,10 +178,10 @@ Now let's test our code:
 node deploy_contract.js -f voter.sol -c Voter -s "0xD8f24D419153E5D03d614C5155f900f4B5C8A65C" -k "1624ff1MYPRIVATEKEY"
 Contract Compiled voter.sol
 Deploying contract, Gas Estimate:  622994
-Transation hash: 0x896b9e3d8548bdf861184c158c786f05ce1a4533cec59e53f7f853aea0422c4f
-Confimation Number: 0
+Transaction hash: 0x896b9e3d8548bdf861184c158c786f05ce1a4533cec59e53f7f853aea0422c4f
+Confirmation Number: 0
 Contract Address: 0xE683007C5BfB5BEBA5481C3e938dD4DC47cddbFC
-Confimation Number: 1
+Confirmation Number: 1
 ```
 
 Congratulation. you just made your first contract in Matic Network.  
