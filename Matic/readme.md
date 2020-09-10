@@ -236,11 +236,11 @@ voter.addOption("mlibre" , {from: "0xD8f24D419153E5D03d614C5155f900f4B5C8A65C"})
 To explore the blockchain (mainnet and testnet) you can use `https://explorer.matic.network/`.  
 In this case here is the address:  
 `https://mumbai-explorer.matic.today/address/0xE683007C5BfB5BEBA5481C3e938dD4DC47cddbFC/transactions`
-You can find `Code` and `Validatd Blocks`
+You can find `Code` and `Validated Blocks`
 
 There is also a `graphiql` to explore Matic.
 https://mumbai-explorer.matic.today/graphiql  
-For example let's check our contract block in the net:
+For example, let's check our contract block in the net:
 ```javascript
 {
   transaction(hash: "0x896b9e3d8548bdf861184c158c786f05ce1a4533cec59e53f7f853aea0422c4f")
@@ -267,7 +267,7 @@ the result is:
 * [Matic Widget](https://docs.matic.network/docs/develop/tools/matic-widget)
 
 ### Matic Wallet
-You can create your [Matic wallet](https://wallet.matic.network/) with metamask and the same address as your Ethereum mainchain address.  
+You can create your [Matic wallet](https://wallet.matic.network/) with Metamask and the same address as your Ethereum mainchain address.  
 Currently, you can send, receive, and MATIC and ETH using the Matic web wallet.  
 Staking and earning are in the early stages as it seems.  
 The wallet has a contact manager feature to save contacts' addresses by name.  
