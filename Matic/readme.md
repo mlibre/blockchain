@@ -1,6 +1,6 @@
 Introduing Matic Network
 ===
-**[Matic](https://matic.network/)** is a decentralized platform using [Plasma framework](https://academy.binance.com/blockchain/what-is-ethereum-plasma) that provides faster and low-cost transactions.
+**[Matic](https://matic.network/)** is a decentralized platform using the [Plasma framework](https://academy.binance.com/blockchain/what-is-ethereum-plasma) that provides faster and low-cost transactions.
 Matic is trying to improve some current blockchain challenges.
 * Confirmation Speed
 * Gas fees
@@ -22,7 +22,7 @@ Also as a developer, you can use your own token as settlement fees.
 ## Table of content
 + [Development](#development)
   + [Account](#account)
-  + [Installtion](#installtion)
+  + [Installation](#installation)
   + [Implementation](#implementation)
 + [MATIC](#matic)
 + [Interacting with Matic blockchain](#interacting-with-matic-blockchain)
@@ -35,7 +35,7 @@ Also as a developer, you can use your own token as settlement fees.
 
 ## Development
 
-In this example, we write a `Voter` contract, compile it with `solc 0.7.1`. We connect to the `Matic` testnet using `Web3 1.2`, and finally deploying our contract on the Matic testnet blockchain.  
+In this example, we write a `Voter` contract, compile it with `solc 0.7.1`. We connect to the `Matic` testnet using `Web3 1.2`, and finally deploy our contract on the Matic testnet blockchain.  
 And then we interact with the blockchain using `Geth`. and `Graphiql`.
 
 ### Account
@@ -49,7 +49,7 @@ geth attach https://rpc-mumbai.matic.today
 1987540120000000000
 ```
 
-### Installtion
+### Installation
 If you are using Arch-based Linux, like Manjaro here are the commands. for other distros are also almost the same.  
 ```bash
 sudo pacman -S go-ethereum solc # solidity compiler & Geth
@@ -109,10 +109,10 @@ function compile(filename) {
 ```
 So in the first line, we read the contract file.  
 In the second line, we specify compiler options. Like optimizer, Language, and ...  
-these options work with `solc 0.7`.  
+These options work with `solc 0.7`.  
 Now we compile the `.sol` file using `solc.compile` function.  
 For each contract in the `.sol` file, `solc` creates a key in `compiledContract.contracts['voter.sol']`.  
-As we only have one contract, so we just pick the first one.  
+As we only have one contract, we just pick the first one.  
 Then we create an `abi.json` file. and then we return the contract, for future usages.
 
 > Web3 interface
@@ -189,7 +189,7 @@ You can find your contract address in the output log. (in this case `0xE683007C5
 
 > The Matic mainnet address is: `https://rpc-mainnet.matic.network`.
 
-To deploy your contract or interacting with the mainnet you just need to replace the testnet address with the above.  
+To deploy your contract or interact with the mainnet you just need to replace the testnet address with the above.  
 
 ## MATIC
 MATIC is the Matic Network native token.  
@@ -233,14 +233,14 @@ voter.addOption("mlibre" , {from: "0xD8f24D419153E5D03d614C5155f900f4B5C8A65C"})
 
 ### Matic Explorer
 
-To explor the blockchain (mainnet and testnet) you can use `https://explorer.matic.network/`.  
+To explore the blockchain (mainnet and testnet) you can use `https://explorer.matic.network/`.  
 In this case here is the address:  
 `https://mumbai-explorer.matic.today/address/0xE683007C5BfB5BEBA5481C3e938dD4DC47cddbFC/transactions`
 You can find `Code` and `Validatd Blocks`
 
-There is also a `graphiql` to explor Matic.
+There is also a `graphiql` to explore Matic.
 https://mumbai-explorer.matic.today/graphiql  
-For example lets check our contract block in the net:
+For example let's check our contract block in the net:
 ```javascript
 {
   transaction(hash: "0x896b9e3d8548bdf861184c158c786f05ce1a4533cec59e53f7f853aea0422c4f")
@@ -267,7 +267,7 @@ the result is:
 * [Matic Widget](https://docs.matic.network/docs/develop/tools/matic-widget)
 
 ### Matic Wallet
-You can create your [Matic wallet](https://wallet.matic.network/) with metamask and same address as your Ethereum mainchain address.  
+You can create your [Matic wallet](https://wallet.matic.network/) with metamask and the same address as your Ethereum mainchain address.  
 Currently, you can send, receive, and MATIC and ETH using the Matic web wallet.  
 Staking and earning are in the early stages as it seems.  
 The wallet has a contact manager feature to save contacts' addresses by name.  
@@ -275,4 +275,4 @@ The reward calculator makes it easy to calculate the reward that could be earned
 
 ### Matic Widget
 [Matic widget](https://docs.matic.network/docs/develop/tools/matic-widget) is an instance of Matic wallet that websites can integrate into their sites.  
-The widget support Matic wallet as well as Matic token bridge functionalities.
+The widget supports Matic wallet as well as Matic token bridge functionalities.
