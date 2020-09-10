@@ -23,7 +23,7 @@ Also as a developer, you can use your own token as settlement fees.
 + [Development](#development)
   + [Account](#account)
   + [Installtion](#installtion)
-  + [Develop](#develop)
+  + [Implementation](#implementation)
 + [MATIC](#matic)
 + [Interacting with Matic blockchain](#interacting-with-matic-blockchain)
   + [Geth](#geth)
@@ -60,7 +60,7 @@ npm i web3 solc @maticnetwork/meta --save # Web3js, Solc nodejs libraries
 ```
 Now that you have `geth`, `solc`, and `web3` we can start writing our `Voter` contract.
 
-### Develop
+### Implementation
 The source code is located here:
 https://github.com/mlibre/blockchain/tree/master/Matic
 
