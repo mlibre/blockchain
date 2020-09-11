@@ -66,5 +66,6 @@ truffle compile
 truffle develop
 truffle test
 truffle unbox metacoin
-truffle migrate
+truffle migrate --network ganache # deploy contracts
+truffle development
 ```

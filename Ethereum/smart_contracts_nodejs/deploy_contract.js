@@ -26,7 +26,7 @@ const options = commandLineArgs(optionDefinitions);
 })();
 
 function compile(filename) {
-	let voterSOl = fs.readFileSync(`../contracts/${filename}` , 'utf8')
+	let voterSOl = fs.readFileSync(`./contracts/${filename}` , 'utf8')
 	let complierInput = {
 		language: 'Solidity',
 		sources:
@@ -59,7 +59,7 @@ function compile(filename) {
 	let contract = compiledContract.contracts[filename][contractName];
 	// console.log(contractName , contract.abi);		
 	let abi = contract.abi;
-	fs.writeFileSync(`../contracts/bin/${contractName}_abi.json` , JSON.stringify(abi));
+	fs.writeFileSync(`./contracts/bin/${contractName}_abi.json` , JSON.stringify(abi));
 	return contract;
 }
 
