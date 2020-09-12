@@ -62,10 +62,10 @@ node deploy_contract.js -f voter.sol -c Voter -s "0xD8f24D419153E5D03d614C5155f9
 ## Truffle
 ```bash
 truffle init
-truffle compile
 truffle develop
+truffle compile
 truffle test
-truffle unbox metacoin
 truffle migrate --network ganache # deploy contracts
+truffle unbox metacoin
 truffle development
 ```
