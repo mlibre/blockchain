@@ -1,4 +1,4 @@
-const CrowdFundingWithDeadline = artifacts.require("CrowdFundingWithDeadline");
+const CrowdFundingWithDeadline = artifacts.require("TestCrowdFundingWithDeadline");
 
 contract('CrowdFundingWithDeadline' , async accounts => {
 	let contract;
@@ -32,6 +32,9 @@ contract('CrowdFundingWithDeadline' , async accounts => {
 		let beneficiaryAddress = await contract.beneficiary.call();
 		expect(beneficiaryAddress).to.equal(beneficiary);
 
+		let fundingDeadline = await contract.fundingDeadline.call();
+		expect(Number.parseInt(fundingDeadline)).to.equal(600);
+
 		let state = await contract.state.call();
 		expect(state.valueOf().toNumber()).to.equal(Ongoing_State);
 	});
@@ -46,6 +49,35 @@ contract('CrowdFundingWithDeadline' , async accounts => {
 
 		let totalCollected = await contract.totalCollected.call();
 		expect(Number.parseInt(totalCollected)).to.equal(ONE_ETH);
+	});
+
+	it('Cannot contribute after deadline', async function () {
+		try {
+			await contract.setCurrentTime(601);
+			await contract.sendTransaction({
+				from: account,
+				value: ONE_ETH
+			});
+			expect.fail();
+		} catch (e) {
+			expect(e.message).to.include.any.string('VM Exception while processing transaction')
+		}
+	});
+	it('CrowdFunding succeeded', async function () {
+		await contract.contribute({
+			value: ONE_ETH,
+			from: account
+		});
+		await contract.setCurrentTime(601);
+		await contract.finishCrowdFunding();
+		let state = await contract.state.call();
+		expect(state.valueOf().toNumber()).to.equal(Succeeded_State);
+	});
+	it('CrowdFunding Failed', async function () {
+		await contract.setCurrentTime(601);
+		await contract.finishCrowdFunding();
+		let state = await contract.state.call();
+		expect(state.valueOf().toNumber()).to.equal(Faild_State);
 	});
 });
 
