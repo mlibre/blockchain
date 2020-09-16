@@ -35,6 +35,18 @@ contract('CrowdFundingWithDeadline' , async accounts => {
 		let state = await contract.state.call();
 		expect(state.valueOf().toNumber()).to.equal(Ongoing_State);
 	});
+
+	it('Funs are contributed', async function () {
+		await contract.contribute({
+			value: ONE_ETH,
+			from: account
+		});
+		let contributed = await contract.amounts.call(account);
+		expect(Number.parseInt(contributed)).to.equal(ONE_ETH);
+
+		let totalCollected = await contract.totalCollected.call();
+		expect(Number.parseInt(totalCollected)).to.equal(ONE_ETH);
+	});
 });
 
 function toNumbers(bigNums) {
