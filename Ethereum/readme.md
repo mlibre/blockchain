@@ -1,9 +1,9 @@
 Introducing Ethereum
 ===
-Ethereum is a decentralized platform.  
-This repository contains a voter and a multi-sig-wallet contrat. 
-> Development tools: `nodejs 12` & `web3 1.2` and `solc 0.7.1`
-
+Ethereum is a decentralized platform. 
+This repository contains a **Voter**, a **multi-sig-wallet** and a **CrowdFundingWithDeadline** contrat.
+> Development tools: `nodejs 12` & `web3 1.2` & `truffle 5` and `solc 0.7`
+ 
 In this example you will find:
 * Deploying contract
 * Gas estimate
@@ -11,33 +11,34 @@ In this example you will find:
 * Geth light node
 * Web3 usage in nodejs
 * Connecting rinkeby node
-* Voter, multi-Sig-Wallet contracts
+* Fully implemented Voter, Multi-Sig-Wallet, CrowdFundingWithDeadline contracts
+* Truffle tests, deploy
 * ....
-
+ 
 ## Table of content
 + [Installation](#installation)
 + [Solc](#solc)
 + [Geth](#geth)
 + [Web3](#web3)
 + [truffle](#truffle)
-
-
+ 
+ 
 ## Installation
-
+ 
 ```bash
 sudo pacman -S go-ethereum solc
 npm i web3 solc --save
-sudo npm i -g truffle 
+sudo npm i -g truffle
 ```
-
+ 
 ## Solc
-
+ 
 ```bash
 solc multi-sig-wallet.sol  -o ./bin/ --combined-json=abi,bin,metadata --pretty-json --optimize --metadata --gas --abi --bin --overwrite --color
 ```
-
+ 
 ## Geth
-
+ 
 ```bash
 geth --rinkeby --http --syncmode=light --rpcapi="eth,net,web3,personal,txpool" --allow-insecure-unlock  --rpccorsdomain "*"
 geth attach http://127.0.0.1:8545
@@ -53,12 +54,12 @@ var voter = eth.contract([{"inputs":[{"internalType":"string","name":"option","t
 voter
 voter.addOption("mlibre" , {from: "0xD8f24D419153E5D03d614C5155f900f4B5C8A65C"})
 ```
-
+ 
 ## Web3
 ```bash
 node deploy_contract.js -f voter.sol -c Voter -s "0xD8f24D419153E5D03d614C5155f900f4B5C8A65C" -p "password" -h "http://127.0.0.1:8545"
 ```
-
+ 
 ## Truffle
 ```bash
 truffle init
@@ -69,3 +70,5 @@ truffle migrate --network ganache # deploy contracts
 truffle unbox metacoin
 truffle development
 ```
+ 
+
