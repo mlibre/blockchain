@@ -3,6 +3,11 @@ pragma solidity >=0.4.22 <0.8.0;
 pragma experimental ABIEncoderV2;
 
 contract CrowdFundingWithDeadline {
+    event CampaignFinished(
+        address addr,
+        uint totalCollected,
+        bool succeeded
+    );
     enum State 
     {
         Ongoing, Failed, Succeeded, Paidout
@@ -71,6 +76,7 @@ contract CrowdFundingWithDeadline {
         {
             state = State.Succeeded;
         }
+        emit CampaignFinished(msg.sender, totalCollected, collected);
     }
     function currentTime() virtual internal view returns (uint) {
         return block.timestamp;

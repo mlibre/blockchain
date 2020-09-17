@@ -108,6 +108,14 @@ contract('CrowdFundingWithDeadline' , async accounts => {
 		let amount = await contract.amounts.call(account);
 		expect(Number.parseInt(amount)).to.equal(0);
 	});
+	it('event is emitted', async function () {
+		await contract.setCurrentTime(601);
+		let res = await contract.finishCrowdFunding();
+		let eventName = res.logs[0].event;
+		let eventRes = res.logs[0].args;
+		expect(Number.parseInt(eventRes.totalCollected)).to.equal(0);
+		expect(eventRes.succeeded).to.equal(false);
+	});
 });
 
 function toNumbers(bigNums) {
