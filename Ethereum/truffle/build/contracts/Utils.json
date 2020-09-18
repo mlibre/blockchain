@@ -1,0 +1,782 @@
+{
+  "contractName": "Utils",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "sumInEth",
+          "type": "uint256"
+        }
+      ],
+      "name": "etherToWei",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function",
+      "constant": true
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "timeInMin",
+          "type": "uint256"
+        }
+      ],
+      "name": "minToSec",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function",
+      "constant": true
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.0+commit.9e61f92b\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"sumInEth\",\"type\":\"uint256\"}],\"name\":\"etherToWei\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"timeInMin\",\"type\":\"uint256\"}],\"name\":\"minToSec\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/home/mlibre/hard/projects/blockchain/Ethereum/truffle/contracts/Utils.sol\":\"Utils\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/mlibre/hard/projects/blockchain/Ethereum/truffle/contracts/Utils.sol\":{\"keccak256\":\"0x57a645cdb4ee166c1417075a2fab71f3a528075a4c87a5c267641ca9a5e861ab\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://829c91b72a8f3b3c1116370def30fc26046d4b4b4487a877b176431b813a4d0c\",\"dweb:/ipfs/QmQPJwgwtbfsmZs8g3Z2HN4WgLRpH3MBrNAiHh4sjcB5tv\"]}},\"version\":1}",
+  "bytecode": "0x610185610026600b82828239805160001a60731461001957fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600436106100405760003560e01c8063cd6fb04214610045578063d8916bb914610075575b600080fd5b61005f600480360381019061005a91906100db565b6100a5565b60405161006c9190610113565b60405180910390f35b61008f600480360381019061008a91906100db565b6100b2565b60405161009c9190610113565b60405180910390f35b6000603c82029050919050565b6000670de0b6b3a764000082029050919050565b6000813590506100d581610138565b92915050565b6000602082840312156100ed57600080fd5b60006100fb848285016100c6565b91505092915050565b61010d8161012e565b82525050565b60006020820190506101286000830184610104565b92915050565b6000819050919050565b6101418161012e565b811461014c57600080fd5b5056fea26469706673582212206a3c999995c5f91e9de89d8c44e6af030d968561a8b2fe4e7e096abce7a9aedb64736f6c63430007000033",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600436106100405760003560e01c8063cd6fb04214610045578063d8916bb914610075575b600080fd5b61005f600480360381019061005a91906100db565b6100a5565b60405161006c9190610113565b60405180910390f35b61008f600480360381019061008a91906100db565b6100b2565b60405161009c9190610113565b60405180910390f35b6000603c82029050919050565b6000670de0b6b3a764000082029050919050565b6000813590506100d581610138565b92915050565b6000602082840312156100ed57600080fd5b60006100fb848285016100c6565b91505092915050565b61010d8161012e565b82525050565b60006020820190506101286000830184610104565b92915050565b6000819050919050565b6101418161012e565b811461014c57600080fd5b5056fea26469706673582212206a3c999995c5f91e9de89d8c44e6af030d968561a8b2fe4e7e096abce7a9aedb64736f6c63430007000033",
+  "immutableReferences": {},
+  "sourceMap": "101:219:4:-:0;;;;;;;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "101:219:4:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;220:98;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;121:96;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;220:98;274:4;304:9;292;:21;285:28;;220:98;;;:::o;121:96::-;176:4;205:7;194:8;:18;187:25;;121:96;;;:::o;5:130:-1:-;;85:6;72:20;63:29;;97:33;124:5;97:33;:::i;:::-;57:78;;;;:::o;142:241::-;;246:2;234:9;225:7;221:23;217:32;214:2;;;262:1;259;252:12;214:2;297:1;314:53;359:7;350:6;339:9;335:22;314:53;:::i;:::-;304:63;;276:97;208:175;;;;:::o;390:121::-;481:24;499:5;481:24;:::i;:::-;476:3;469:37;463:48;;:::o;518:238::-;;653:2;642:9;638:18;630:26;;667:79;743:1;732:9;728:17;719:6;667:79;:::i;:::-;624:132;;;;:::o;763:72::-;;825:5;814:16;;808:27;;;:::o;842:117::-;911:24;929:5;911:24;:::i;:::-;904:5;901:35;891:2;;950:1;947;940:12;891:2;885:74;:::o",
+  "source": "// SPDX-License-Identifier: GPL-3.0\npragma solidity >=0.6 <0.8.0;\npragma experimental ABIEncoderV2;\n\nlibrary Utils {\n    function etherToWei(uint sumInEth) public pure returns(uint) {\n\t\t return sumInEth * 1 ether;\n\t }\n\t function minToSec(uint timeInMin) public pure returns(uint) {\n\t\t return timeInMin * 1 minutes;\n\t }\n}",
+  "sourcePath": "/home/mlibre/hard/projects/blockchain/Ethereum/truffle/contracts/Utils.sol",
+  "ast": {
+    "absolutePath": "/home/mlibre/hard/projects/blockchain/Ethereum/truffle/contracts/Utils.sol",
+    "exportedSymbols": {
+      "Utils": [
+        512
+      ]
+    },
+    "id": 513,
+    "license": "GPL-3.0",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 486,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.6",
+          "<",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "36:29:4"
+      },
+      {
+        "id": 487,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "66:33:4"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 512,
+        "linearizedBaseContracts": [
+          512
+        ],
+        "name": "Utils",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 498,
+              "nodeType": "Block",
+              "src": "182:35:4",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 496,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 494,
+                      "name": "sumInEth",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 489,
+                      "src": "194:8:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "*",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "hexValue": "31",
+                      "id": 495,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "205:7:4",
+                      "subdenomination": "ether",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_1000000000000000000_by_1",
+                        "typeString": "int_const 1000000000000000000"
+                      },
+                      "value": "1"
+                    },
+                    "src": "194:18:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 493,
+                  "id": 497,
+                  "nodeType": "Return",
+                  "src": "187:25:4"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "d8916bb9",
+            "id": 499,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "etherToWei",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 490,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 489,
+                  "mutability": "mutable",
+                  "name": "sumInEth",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 499,
+                  "src": "141:13:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 488,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "141:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "140:15:4"
+            },
+            "returnParameters": {
+              "id": 493,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 492,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 499,
+                  "src": "176:4:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 491,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "176:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "175:6:4"
+            },
+            "scope": 512,
+            "src": "121:96:4",
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 510,
+              "nodeType": "Block",
+              "src": "280:38:4",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 508,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 506,
+                      "name": "timeInMin",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 501,
+                      "src": "292:9:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "*",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "hexValue": "31",
+                      "id": 507,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "304:9:4",
+                      "subdenomination": "minutes",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_60_by_1",
+                        "typeString": "int_const 60"
+                      },
+                      "value": "1"
+                    },
+                    "src": "292:21:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 505,
+                  "id": 509,
+                  "nodeType": "Return",
+                  "src": "285:28:4"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "cd6fb042",
+            "id": 511,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "minToSec",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 502,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 501,
+                  "mutability": "mutable",
+                  "name": "timeInMin",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 511,
+                  "src": "238:14:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 500,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "238:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "237:16:4"
+            },
+            "returnParameters": {
+              "id": 505,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 504,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 511,
+                  "src": "274:4:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 503,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "274:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "273:6:4"
+            },
+            "scope": 512,
+            "src": "220:98:4",
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 513,
+        "src": "101:219:4"
+      }
+    ],
+    "src": "36:284:4"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/mlibre/hard/projects/blockchain/Ethereum/truffle/contracts/Utils.sol",
+    "exportedSymbols": {
+      "Utils": [
+        512
+      ]
+    },
+    "id": 513,
+    "license": "GPL-3.0",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 486,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.6",
+          "<",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "36:29:4"
+      },
+      {
+        "id": 487,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "66:33:4"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 512,
+        "linearizedBaseContracts": [
+          512
+        ],
+        "name": "Utils",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 498,
+              "nodeType": "Block",
+              "src": "182:35:4",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 496,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 494,
+                      "name": "sumInEth",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 489,
+                      "src": "194:8:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "*",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "hexValue": "31",
+                      "id": 495,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "205:7:4",
+                      "subdenomination": "ether",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_1000000000000000000_by_1",
+                        "typeString": "int_const 1000000000000000000"
+                      },
+                      "value": "1"
+                    },
+                    "src": "194:18:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 493,
+                  "id": 497,
+                  "nodeType": "Return",
+                  "src": "187:25:4"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "d8916bb9",
+            "id": 499,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "etherToWei",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 490,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 489,
+                  "mutability": "mutable",
+                  "name": "sumInEth",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 499,
+                  "src": "141:13:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 488,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "141:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "140:15:4"
+            },
+            "returnParameters": {
+              "id": 493,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 492,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 499,
+                  "src": "176:4:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 491,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "176:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "175:6:4"
+            },
+            "scope": 512,
+            "src": "121:96:4",
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 510,
+              "nodeType": "Block",
+              "src": "280:38:4",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 508,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 506,
+                      "name": "timeInMin",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 501,
+                      "src": "292:9:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "*",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "hexValue": "31",
+                      "id": 507,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "304:9:4",
+                      "subdenomination": "minutes",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_60_by_1",
+                        "typeString": "int_const 60"
+                      },
+                      "value": "1"
+                    },
+                    "src": "292:21:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 505,
+                  "id": 509,
+                  "nodeType": "Return",
+                  "src": "285:28:4"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "cd6fb042",
+            "id": 511,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "minToSec",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 502,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 501,
+                  "mutability": "mutable",
+                  "name": "timeInMin",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 511,
+                  "src": "238:14:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 500,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "238:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "237:16:4"
+            },
+            "returnParameters": {
+              "id": 505,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 504,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 511,
+                  "src": "274:4:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 503,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "274:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "273:6:4"
+            },
+            "scope": 512,
+            "src": "220:98:4",
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 513,
+        "src": "101:219:4"
+      }
+    ],
+    "src": "36:284:4"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.0+commit.9e61f92b.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0xBDd95653EE7A4F8aB47F3f9E3eD5252c9F377e19",
+      "transactionHash": "0x065eb3953c5598094226fea5ad4052bef00c76ef3b5bebfb8d44c99a235087ee"
+    }
+  },
+  "schemaVersion": "3.2.4",
+  "updatedAt": "2020-09-18T13:40:44.416Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

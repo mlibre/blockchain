@@ -1,8 +1,10 @@
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity >=0.4.22 <0.8.0;
 pragma experimental ABIEncoderV2;
+import "./Utils.sol";
 
 contract CrowdFundingWithDeadline {
+    using Utils for *;
     event CampaignFinished(
         address addr,
         uint totalCollected,
@@ -28,8 +30,8 @@ contract CrowdFundingWithDeadline {
         address payable beneficiaryAddress
     ) public {
         name = contractName;
-        targetAmount = targetAmountEth * 1 ether;
-        fundingDeadline = currentTime() + durationInMin * 1 minutes;
+        targetAmount = Utils.etherToWei(targetAmountEth);
+        fundingDeadline = currentTime() + Utils.minToSec(durationInMin);
         beneficiary = beneficiaryAddress;
         state = State.Ongoing;
     }
