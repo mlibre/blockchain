@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Input, Table, TableRow, TableBody } from 'semantic-ui-react';
-import {withRouter} from 'react-router';
+import 'semantic-ui-css/semantic.min.css'
 
 export class Campaign extends Component
 {
@@ -35,7 +35,7 @@ export class Campaign extends Component
 	getCampaignAddress(){
 		return this.props.match.params.address
 	}
-	getCampaign()
+	getCampaign(address)
 	{
 		return{
 			name: 'Contract Name',
@@ -65,7 +65,8 @@ export class Campaign extends Component
 							<Table.Cell singleLine>
 								{this.state.campaign.name}
 							</Table.Cell>
-						</TableRow>						<TableRow>
+						</TableRow>
+						<TableRow>
 							<Table.Cell singleLine>
 								Target Amount
 							</Table.Cell>
@@ -73,7 +74,55 @@ export class Campaign extends Component
 								{this.state.campaign.targetAmount}
 							</Table.Cell>
 						</TableRow>
+						<TableRow>
+							<Table.Cell singleLine>
+								Total Collected
+							</Table.Cell>
+							<Table.Cell singleLine>
+								{this.state.campaign.totalCollected}
+							</Table.Cell>
+						</TableRow>
+						<TableRow>
+							<Table.Cell singleLine>
+								Campaign Finished
+							</Table.Cell>
+							<Table.Cell singleLine>
+								{this.state.campaign.campaignFinished.toString()}
+							</Table.Cell>
+						</TableRow>
+						<TableRow>
+							<Table.Cell singleLine>
+								Deadline
+							</Table.Cell>
+							<Table.Cell singleLine>
+								{this.state.campaign.deadline.toString()}
+							</Table.Cell>
+						</TableRow>
+						<TableRow>
+							<Table.Cell singleLine>
+								Is Beneficiary
+							</Table.Cell>
+							<Table.Cell singleLine>
+								{this.state.campaign.isBeneficiary.toString()}
+							</Table.Cell>
+						</TableRow>
+						<TableRow>
+							<Table.Cell singleLine>
+								state
+							</Table.Cell>
+							<Table.Cell singleLine>
+								{this.state.campaign.state}
+							</Table.Cell>
+						</TableRow>
+						
 					</TableBody>
+					<Table.Footer fullWidth>
+						<Table.Row>
+							<Table.HeaderCell colSpan="2">
+								{this.campaignIntractionSection()}
+							</Table.HeaderCell>
+						</Table.Row>
+					</Table.Footer>
 				</Table>
 			</div>
 		);
