@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Button, Input, Table, TableRow, TableBody } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css'
+import { createContract} from './../ethereum/crowdfundingContract'
+import {web3} from './../ethereum/web3'
+
 
 export class Campaign extends Component
 {
@@ -27,7 +30,7 @@ export class Campaign extends Component
 		this.onContribute = this.onContribute.bind(this);
 	};
 	async componentDidMount(){
-		const currentCampaign = this.getCampaign(this.getCampaignAddress())
+		const currentCampaign = await this.getCampaign(this.getCampaignAddress())
 		this.setState({
 			campaign: currentCampaign
 		})
@@ -35,16 +38,28 @@ export class Campaign extends Component
 	getCampaignAddress(){
 		return this.props.match.params.address
 	}
-	getCampaign(address)
+	async getCampaign(address)
 	{
+		const accounts = await web3.eth.getAccounts();
+		const contract = createContract(address);
+		const name = await contract.methods.name().call();
+		const targetAmount = await contract.methods.targetAmount().call();
+		const totalCollected = await contract.methods.totalCollected().call();
+		const beforeDeadline = await contract.methods.beforeDeadline().call();
+		const deadlineSec = await contract.methods.fundingDeadline().call();
+		const beneficiary = await contract.methods.beneficiary().call();
+		const state = await contract.methods.state().call();
+		const date = new Date(0)
+		date.setUTCSeconds(deadlineSec);
+
 		return{
-			name: 'Contract Name',
-			targetAmount: 100,
-			totalCollected: 50,
-			campaignFinished: false,
-			deadline: new Date(),
-			isBeneficiary: true,
-			state: this.ONGOING_STATE
+			name: name,
+			targetAmount: targetAmount,
+			totalCollected: totalCollected,
+			campaignFinished: !beforeDeadline,
+			deadline: date,
+			isBeneficiary: beneficiary.toLowerCase() === accounts[0].toLowerCase(),
+			state: state
 		}
 	}
 	render(){
