@@ -13,7 +13,7 @@
 		 "request": "launch",
 		 "runtimeExecutable": "/usr/bin/chromium",
 		 "name": "Launch Chrome against localhost",
-		 "url": "http://localhost:3000",
+		 "url": "http://localhost:3001",
 		 "runtimeArgs": [
 			"--user-data-dir"
 		 ],

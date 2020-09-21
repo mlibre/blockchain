@@ -46,8 +46,8 @@ export class Campaign extends Component
 		const targetAmount = await contract.methods.targetAmount().call();
 		const totalCollected = await contract.methods.totalCollected().call();
 		const beforeDeadline = await contract.methods.beforeDeadline().call();
-		// const currentTime = Date.now();
-		// const blockCurentTime = await contract.methods.getBlockTime().call();
+		const currentTime = Date.now();
+		const blockCurentTime = await contract.methods.getBlockTime().call();
 		const deadlineSec = await contract.methods.fundingDeadline().call();
 		const collected = await contract.methods.collected().call();
 		const beneficiary = await contract.methods.beneficiary().call();
@@ -216,6 +216,7 @@ export class Campaign extends Component
 		await contract.methods.contribute().send({
 			from: accounts[0],
 			value: amount
+			// gas: 222000
 		});
 		// const campaign = this.state.campaign;
 		// campaign.totalCollected = Number.parseInt(campaign.totalCollected) + Number.parseInt(amount)
@@ -236,7 +237,6 @@ export class Campaign extends Component
 			});
 		
 		} catch (e) {
-			alert(e)
 			console.log(e);
 		}
 		// alert(res.logs[0]);

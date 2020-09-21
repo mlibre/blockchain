@@ -1326,12 +1326,12 @@
         }
       },
       "links": {
-        "Utils": "0x19bEd510a0f3ad86725990E3AA5e260E2e96c600"
+        "Utils": "0x00058D2FEA03E65B303Eb69E9DC0F4EdA0e99056"
       }
     }
   },
   "schemaVersion": "3.2.4",
-  "updatedAt": "2020-09-21T17:11:19.258Z",
+  "updatedAt": "2020-09-21T18:18:47.317Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
