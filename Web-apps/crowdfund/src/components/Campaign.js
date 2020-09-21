@@ -182,7 +182,14 @@ export class Campaign extends Component
 		}
 		if(this.state.campaign.state === this.SUCCEEDED_STATE && this.state.campaign.isBeneficiary === true){
 			return <div>
-				<Button type='submit' positive>Collect Funds</Button>
+				<Button
+				type='submit'
+				positive
+				onClick={(e) => this.collectFunds()}>
+					<Button.Content>
+					Collect Funds
+					</Button.Content>
+				</Button>
 			</div>
 		}
 		if(this.state.campaign.state === this.FAILED_STATE){
@@ -232,6 +239,25 @@ export class Campaign extends Component
 		const contract = createContract(this.getCampaignAddress());
 		try {
 			let res = await contract.methods.finishCrowdFunding().send({
+				from: accounts[0],
+				gas: 67329
+			});
+		
+		} catch (e) {
+			console.log(e);
+		}
+		// alert(res.logs[0]);
+		const currentCampaign = await this.getCampaign(this.getCampaignAddress())
+		this.setState({
+			campaign: currentCampaign
+		})
+	}
+	async collectFunds(event)
+	{
+		const accounts = await web3.eth.getAccounts();
+		const contract = createContract(this.getCampaignAddress());
+		try {
+			let res = await contract.methods.collect().send({
 				from: accounts[0],
 				gas: 67329
 			});

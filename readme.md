@@ -1,6 +1,6 @@
 My blockchain repository. 
 ===
-Containing Articles, Examples, Implementations, and ...
+Containing Articles, Examples, Implementations, and ... in blockchain. specially Ethereum
  
 ## Table of content
 + [Explenations](#explenations)
