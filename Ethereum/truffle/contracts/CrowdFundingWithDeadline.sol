@@ -83,6 +83,9 @@ contract CrowdFundingWithDeadline {
     function currentTime() virtual internal view returns (uint) {
         return block.timestamp;
     }
+    function getBlockTime() public view returns (uint) {
+        return block.timestamp;
+    }
     function beforeDeadline() public view returns (bool) {
         return currentTime() < fundingDeadline; 
     }

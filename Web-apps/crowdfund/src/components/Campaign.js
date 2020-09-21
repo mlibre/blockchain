@@ -46,20 +46,25 @@ export class Campaign extends Component
 		const targetAmount = await contract.methods.targetAmount().call();
 		const totalCollected = await contract.methods.totalCollected().call();
 		const beforeDeadline = await contract.methods.beforeDeadline().call();
+		// const currentTime = Date.now();
+		// const blockCurentTime = await contract.methods.getBlockTime().call();
 		const deadlineSec = await contract.methods.fundingDeadline().call();
+		const collected = await contract.methods.collected().call();
 		const beneficiary = await contract.methods.beneficiary().call();
 		const state = await contract.methods.state().call();
 		const date = new Date(0)
+		
 		date.setUTCSeconds(deadlineSec);
 
 		return{
 			name: name,
 			targetAmount: targetAmount,
 			totalCollected: totalCollected,
-			campaignFinished: !beforeDeadline,
+			campaignFinished: !beforeDeadline && collected,
 			deadline: date,
 			isBeneficiary: beneficiary.toLowerCase() === accounts[0].toLowerCase(),
-			state: state
+			state: state,
+			collected: collected.toString()
 		}
 	}
 	render(){
@@ -129,6 +134,14 @@ export class Campaign extends Component
 								{this.state.campaign.state}
 							</Table.Cell>
 						</TableRow>
+						<TableRow>
+							<Table.Cell singleLine>
+								collected
+							</Table.Cell>
+							<Table.Cell singleLine>
+								{this.state.campaign.collected}
+							</Table.Cell>
+						</TableRow>
 						
 					</TableBody>
 					<Table.Footer fullWidth>
@@ -157,7 +170,14 @@ export class Campaign extends Component
 	{
 		if(this.state.campaign.state === this.ONGOING_STATE){
 			return <div>
-				<Button type='submit' positive>Finish Campaign</Button>
+				<Button
+				type='submit'
+				positive
+				onClick={(e) => this.finishCrowd()}>
+					<Button.Content>
+					Finish Campaign
+					</Button.Content>
+				</Button>
 			</div>
 		}
 		if(this.state.campaign.state === this.SUCCEEDED_STATE && this.state.campaign.isBeneficiary === true){
@@ -188,7 +208,41 @@ export class Campaign extends Component
 			/>
 			</div>
 	}
-	onContribute(event){
-		alert(`Contribution ${this.state.contributionAmount} to a contract`)
+	async onContribute(event)
+	{
+		const accounts = await web3.eth.getAccounts();
+		const contract = createContract(this.getCampaignAddress());
+		const amount = web3.utils.toWei(this.state.contributionAmount, 'ether');
+		await contract.methods.contribute().send({
+			from: accounts[0],
+			value: amount
+		});
+		// const campaign = this.state.campaign;
+		// campaign.totalCollected = Number.parseInt(campaign.totalCollected) + Number.parseInt(amount)
+		// this.setState({campaign: campaign});
+		const currentCampaign = await this.getCampaign(this.getCampaignAddress())
+		this.setState({
+			campaign: currentCampaign
+		})
+	}
+	async finishCrowd(event)
+	{
+		const accounts = await web3.eth.getAccounts();
+		const contract = createContract(this.getCampaignAddress());
+		try {
+			let res = await contract.methods.finishCrowdFunding().send({
+				from: accounts[0],
+				gas: 67329
+			});
+		
+		} catch (e) {
+			alert(e)
+			console.log(e);
+		}
+		// alert(res.logs[0]);
+		const currentCampaign = await this.getCampaign(this.getCampaignAddress())
+		this.setState({
+			campaign: currentCampaign
+		})
 	}
 }

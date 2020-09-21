@@ -762,12 +762,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xBDd95653EE7A4F8aB47F3f9E3eD5252c9F377e19",
-      "transactionHash": "0x065eb3953c5598094226fea5ad4052bef00c76ef3b5bebfb8d44c99a235087ee"
+      "address": "0x19bEd510a0f3ad86725990E3AA5e260E2e96c600",
+      "transactionHash": "0x23e4090419bfb5001848910687892a10f6df154d8711023ed0b182472fb9a39c"
     }
   },
   "schemaVersion": "3.2.4",
-  "updatedAt": "2020-09-18T13:40:44.416Z",
+  "updatedAt": "2020-09-21T17:11:19.254Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
