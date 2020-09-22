@@ -33,11 +33,20 @@ So `MetaMask` is just a way to communicate with the Ethereum network without run
 > Ethereum & IPFS APIs [enter link description here](https://infura.io/)
  
 So as it says they are providing APIs, so we can easily communicate with Ethereum netwrok. in background they probably have `geth` nodes or other kind of nodes.
- 
+
+# Bitcoin address & wallet
+There is no such thing as wallet in bitcoin netwrok. it is an abstract. a wallet contains key-pairs, created addresses and ...  
+An address is a hash of a bitcoin publick-key wallet.
+U can use an address as many as u want to send and recive bitcoin.
+https://www.bitcoin.com/get-started/how-bitcoin-transactions-work/
+
 ## Other Stuff
 cd ~/.ethereum/rinkeby/
 rm PRIVATE_KEYS, Account
 https://rinkeby.etherscan.io/address/CONTRACT_ADDRESS
+
+## Articles
+https://www.quora.com/What-is-the-difference-between-a-bitcoin-address-and-a-bitcoin-wallet
  
  
 
